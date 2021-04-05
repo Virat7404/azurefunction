@@ -30,6 +30,7 @@ stages{
                                 resourceGroup: 'Jen_rgp', 
                                 //filePath: 'target/azure-functions/odd-or-even-function-sample/*.json,target/azure-functions/odd-or-even-function-sample/*.jar,bin/*,target/azure-functions/odd-or-even-function-sample/HttpTrigger-Java/*',
                                 sourceDirectory: 'target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev'
+                        func azure functionapp publish ensfn3 --publish-settings-only
                         
      }
       }
