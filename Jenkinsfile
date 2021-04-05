@@ -24,9 +24,9 @@ stages{
     stage('Publish') {
      steps{        
    
-                          
+         step{    
                         func //azure functionapp publish ensfn3 --publish-settings-only
-                        
+         }          
      }
       }
  }
