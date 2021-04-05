@@ -26,10 +26,10 @@ stages{
    
                            azureFunctionAppPublish appName: 'ensfn3', 
                                 azureCredentialsId: 'mscred', 
-                                //filePath: 'local.settings.json,**/*.jar,bin/*,HttpTrigger-Java/*',
+                                filePath: '**/*.json,**/*.jar,bin/*,EventHubRawTransferFunction/*',
                                 resourceGroup: 'Jen_rgp', 
-                                filePath: 'target/azure-functions/odd-or-even-function-sample/*.json,target/azure-functions/odd-or-even-function-sample/*.jar,bin/*,target/azure-functions/odd-or-even-function-sample/HttpTrigger-Java/*',
-                                sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
+                                //filePath: 'target/azure-functions/odd-or-even-function-sample/*.json,target/azure-functions/odd-or-even-function-sample/*.jar,bin/*,target/azure-functions/odd-or-even-function-sample/HttpTrigger-Java/*',
+                                sourceDirectory: 'target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev'
                         
      }
       }
