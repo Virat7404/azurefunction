@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=sahrmzprimaryeventhub;AccountKey=EMSPYfT0jZrjRKv72Gfg3X56zEzWhKYoQDsCZLmoBxFsyzQfqJEVKXkv0eLX4AJ7Zl4Nh+6AJEICH4dZoLv1nw==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "ens_primary_eventhub_connectionkey": "Endpoint=sb://ehns-001-fxs-daw-eh-primary-dev.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8s7cjaiVtJNZ23BT7hdXnupgvQDkQQILNeewydlohSU=",
+    "ens_primary_eventhub_name": "ens-primary-dev"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": { 
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=sahrmzprimaryeventhub;AccountKey=EMSPYfT0jZrjRKv72Gfg3X56zEzWhKYoQDsCZLmoBxFsyzQfqJEVKXkv0eLX4AJ7Zl4Nh+6AJEICH4dZoLv1nw==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "ens_primary_eventhub_connectionkey": "Endpoint=sb://evhn-fxs-daw-hrmz-primary-easx-001.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=m4Iz1yDCFDrMeaFuczbBqS/LBCC6M/NIypvEnDyB5jc=",
+    "ens_primary_eventhub_name": "fxs.daw.raw.ens.dev",
+    "error_eventhub_connectionkey": "Endpoint=sb://evhn-fxs-daw-hrmz-easx-001.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=VodJZKpkv+IN6tMtxygm6SJDmKIpAmherBRhZJZ8QWM=",
+    "error_eventhub_name": "fxs.daw.hrmz.error.dev"
+  }
+}
