@@ -23,10 +23,15 @@ stages{
 
     stage('Publish') {
      steps{        
-   
-         step{    
-                        func //azure functionapp publish ensfn3 --publish-settings-only
-         }          
+             withCredentials([usernamePassword(credentialsId: 'credfunhttpuspp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+                           // sh 'az login --allow-no-subscriptions --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+                            //sh 'func init'
+                            sh 'az --version'
+                          sh 'az func azure functionapp publish ensfn3 --publish-settings-only'
+                        }
+           
+                      
+                  
      }
       }
  }
