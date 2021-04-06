@@ -26,10 +26,16 @@ stages{
              withCredentials([usernamePassword(credentialsId: 'credfunhttpuspp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
                            // sh 'az login --allow-no-subscriptions --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
                             //sh 'func init'
-                            sh 'az --version'
-                          sh 'func functionapp publish ensfn3 --publish-settings-only'
+                           // sh 'az --version'
+                          //sh 'func functionapp publish ensfn3 --publish-settings-only'
+                   sh '''
+             az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+             az account set -s $AZURE_SUBSCRIPTION_ID
+                      '''
                         }
-           
+           sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && zip -r ../../../archive.zip ./* && cd -'
+           sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
+           sh 'az logout'
                       
                   
      }
