@@ -33,7 +33,7 @@ stages{
              az account set -s $AZURE_SUBSCRIPTION_ID
                       '''
                         }
-           sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && zip -r ../../../archive.zip ./* && cd -'
+           sh 'cd $PWD/target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev && zip -r ../../../archive.zip ./* && cd -'
            sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
            sh 'az logout'
                       
