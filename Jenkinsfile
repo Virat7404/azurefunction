@@ -5,6 +5,7 @@ pipeline {
         AZURE_TENANT_ID='22fca6e7-362a-49c9-b252-691d5c333d98'
         RESOURCE_GROUP = 'Jen_rgp' 
         FUNC_NAME = 'rawevh'
+        APPLICAION_DIR= 'odd-or-even-function-master/odd-or-even-function-master'
     }
 stages{
     stage('Init') {
