@@ -1,0 +1,38 @@
+node {
+ withEnv(['AZURE_SUBSCRIPTION_ID=92170e15-44be-43ac-b67d-8fd81b05b8f9',
+         'AZURE_TENANT_ID=22fca6e7-362a-49c9-b252-691d5c333d98']) {
+     stage('Init') {
+         cleanWs()
+         checkout scm
+     }
+
+     stage('Build') {
+         sh 'mvn clean package'
+     }
+
+     stage('Publish') {
+       
+        def RESOURCE_GROUP = 'Jen_rgp' 
+         def FUNC_NAME = 'samplefun2'
+         // login Azure
+         withCredentials([usernamePassword(credentialsId: 'credfunhttpuspp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+         sh '''
+             az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+             az account set -s $AZURE_SUBSCRIPTION_ID
+         '''
+       }
+        // sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && zip -r ../../../archive.zip ./* && cd -'
+        // sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
+         
+        //sh " az functionapp config appsettings set --name $FUNC_NAME --resource-group $RESOURCE_GROUP --settings 'PrimatyEventHubName=evh-primary-dev' "
+       // sh " az functionapp config appsettings set --name $FUNC_NAME --resource-group $RESOURCE_GROUP --settings 'secEventHubName=evh-sec-dev' "
+       
+      // sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && mvn azure-functions:deploy'
+      sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && func azure functionapp publish odd-or-even-function-sample --publish-local-settings -i'
+         sh 'az logout'
+        }
+        //azureFunctionAppPublish appName:'plugindeploy', azureCredentialsId: 'mscred',filePath: '**/*.json,**/*.jar,bin/*,HttpTrigger-Java/*,local.settings.json',resourceGroup: 'Jen_rgp',sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
+        
+     }
+ }
+ 
