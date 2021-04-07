@@ -4,7 +4,7 @@ pipeline {
     agent any
     
 	environment {
-		EAI = "${config.eai}"
+		
 		APPLICATION= "${config.application}"
 		BRANCH_NAME = "${env.GIT_BRANCH}"
 	        VERSION = null
