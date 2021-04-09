@@ -20,9 +20,9 @@ stages{
       steps{
       script{      
         sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
-        sh 'cd -'
-        sh 'mkdir deployment_files'
-       sh 'cp -r $PWD/$APPLICAION_DIR/* deployment_files'
+       // sh 'cd -'
+       // sh 'mkdir deployment_files'
+       //sh 'cp -r $PWD/$APPLICAION_DIR/* deployment_files'
       }
       }
     }
@@ -46,7 +46,7 @@ stages{
          //sh 'cp $PWD/$APPLICAION_DIR && mkdir deployment_files'
          
            sh 'az logout'
-          //cleanWs()
+         cleanWs()
                       
                   
      }
