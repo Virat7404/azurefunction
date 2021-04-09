@@ -21,9 +21,9 @@ stages{
       script{      
         sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
         //sh 'mvn clean package'
-        sh 'cd -'
-        sh 'mkdir deployment_files'
-        sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
+        //sh 'cd -'
+       // sh 'mkdir deployment_files'
+        //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
       }
       }
     }
