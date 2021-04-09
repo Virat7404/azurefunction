@@ -20,7 +20,7 @@ stages{
       steps{
       script{      
         sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
-        sh 'rm $PWD/$APPLICAION_DIR/*.jar'
+        sh 'rm $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/*.jar'
    
         //sh 'cd -'
         //sh 'mkdir deployment_files'
