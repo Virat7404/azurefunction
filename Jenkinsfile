@@ -44,14 +44,7 @@ stages{
                   
      }
       }
-  post{
-    success{
-        print "pipeline success"
-}
 
-always {
-    cleanWs()
-}
-}
+
  }
 }
