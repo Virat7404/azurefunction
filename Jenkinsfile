@@ -44,5 +44,12 @@ stages{
                   
      }
       }
+    stage('post'){
+        
+        always{
+        cleanWs()
+        }
+    
+    }
  }
 }
