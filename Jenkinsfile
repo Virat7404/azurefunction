@@ -21,7 +21,8 @@ stages{
       script{      
         sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
         sh 'cd -'
-        sh 'cp $PWD/$APPLICAION_DIR/* ./'
+        sh 'mkdir deployment_files'
+        sh 'cp $PWD/$APPLICAION_DIR/* deployment_files'
       }
       }
     }
