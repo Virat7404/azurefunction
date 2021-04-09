@@ -45,10 +45,11 @@ stages{
      }
       }
     stage('post'){
-        
+       steps{  
         always{
         cleanWs()
         }
+       }
     
     }
  }
