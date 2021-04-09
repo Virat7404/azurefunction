@@ -19,8 +19,9 @@ stages{
     stage('Build') {
       steps{
       script{      
-        sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
-        sh 'cd -'
+       // sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
+       // sh 'cd -'
+       // sh 'cp $PWD/$APPLICAION_DIR/* ./'
       }
       }
     }
@@ -40,11 +41,11 @@ stages{
            //sh 'cd $PWD/target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev && zip -r ../../../archive.zip ./* && cd -'
           // sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
          // sh 'cd $PWD/target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev && func azure functionapp publish functooldeployraw --publish-local-settings -i'
-         sh 'mkdir deployment_files'
+        // sh 'mkdir deployment_files'
          //sh 'cp $PWD/$APPLICAION_DIR && mkdir deployment_files'
          
            sh 'az logout'
-          //cleanWs()
+          cleanWs()
                       
                   
      }
