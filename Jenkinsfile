@@ -19,7 +19,7 @@ stages{
     stage('Build') {
       steps{
       script{      
-       // sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
+        sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
        // sh 'cd -'
        // sh 'cp $PWD/$APPLICAION_DIR/* ./'
       }
