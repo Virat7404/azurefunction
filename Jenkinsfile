@@ -46,7 +46,7 @@ stages{
          //sh 'cp $PWD/$APPLICAION_DIR && mkdir deployment_files'
          
            sh 'az logout'
-          //cleanWs()
+          cleanWs()
                       
                   
      }
