@@ -44,13 +44,14 @@ stages{
                   
      }
       }
-    stage('post'){
-       steps{  
-        always{
-        cleanWs()
-        }
-       }
-    
-    }
+  post{
+    success{
+        print "pipeline success"
+}
+
+always {
+    cleanWs()
+}
+}
  }
 }
