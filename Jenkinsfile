@@ -19,15 +19,16 @@ stages{
     stage('Build') {
       steps{
       script{      
-        //sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
+        sh 'cd $PWD/$APPLICAION_DIR && mvn clean package && cd -'
         //sh 'rm $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/*.jar'
           pom = readMavenPom(file:'pom.xml')
 				    env.VERSION = pom.version
           print VERSION
 	      sh ''' echo $VERSION'''
-        sh 'cd -'
-        sh 'mkdir deployment_files'
-        sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
+        //sh 'cd -'
+        //sh 'mkdir deployment_files'
+        //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
+	 sh 'chmod +x update_jar.sh && ./update_jar'
        
       }
       }
