@@ -43,8 +43,10 @@ stages{
                           //sh 'func functionapp publish ensfn3 --publish-settings-only'
                    sh '''
              az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-	     sh 'cd $PWD/$APPLICAION_DIR && mvn azure-functions:deploy'
-             az account set -s $AZURE_SUBSCRIPTION_ID
+	     az account set -s $AZURE_SUBSCRIPTION_ID
+	     cd $PWD/$APPLICAION_DIR
+	     //mvn azure-functions:deploy
+            
                       '''
                         }
 	     
