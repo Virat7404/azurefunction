@@ -22,7 +22,7 @@ stages{
         //sh 'cd $PWD/$APPLICAION_DIR && mvn clean package'
         //sh 'rm $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/*.jar'
           pom = readMavenPom(file:'pom.xml')
-				    VERSION = pom.getVersion()
+				    VERSION = pom.version
           print VERSION
 	      sh '''echo ("${VERSION}")'''
         //sh 'cd -'
