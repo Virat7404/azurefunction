@@ -45,7 +45,7 @@ stages{
              az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
 	     az account set -s $AZURE_SUBSCRIPTION_ID
 	     cd $PWD/$APPLICAION_DIR
-	     //mvn azure-functions:deploy
+	     
             
                       '''
                         }
