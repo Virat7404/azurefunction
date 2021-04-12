@@ -28,7 +28,7 @@ stages{
         //sh 'cd -'
         //sh 'mkdir deployment_files'
         //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
-	 sh 'chmod +x update_jar.sh && ./update_jar'
+	 sh 'chmod +x update_jar.sh && ./update_jar.sh'
        
       }
       }
