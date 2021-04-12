@@ -25,10 +25,10 @@ stages{
 				    env.VERSION = pom.version
           print VERSION
 	      sh ''' echo $VERSION'''
-        //sh 'cd -'
-        //sh 'mkdir deployment_files'
-        //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
-        
+        sh 'cd -'
+        sh 'mkdir deployment_files'
+        sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
+       
       }
       }
     }
@@ -52,7 +52,7 @@ stages{
          //sh 'cp $PWD/$APPLICAION_DIR && mkdir deployment_files'
          
            sh 'az logout'
-         //cleanWs()
+         cleanWs()
                       
                   
      }
