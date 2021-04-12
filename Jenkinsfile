@@ -24,7 +24,7 @@ stages{
           pom = readMavenPom(file:'pom.xml')
 				    VERSION = pom.getVersion()
           print VERSION
-	      sh 'echo $VERSION'
+	      sh 'echo ${pom.getVersion()}'
         //sh 'cd -'
         //sh 'mkdir deployment_files'
         //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
