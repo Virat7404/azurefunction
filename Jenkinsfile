@@ -25,7 +25,7 @@ stages{
 				    env.VERSION = pom.version
           print VERSION
 	      
-	      if($VERSION.contains(SNAPSHOT)){
+	      if(${VERSION}.contains(SNAPSHOT)){
 	      print "in snopshot"
 	      }
 	      else{
