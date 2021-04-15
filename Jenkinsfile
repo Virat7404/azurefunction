@@ -24,6 +24,13 @@ stages{
           pom = readMavenPom(file:'pom.xml')
 				    env.VERSION = pom.version
           print VERSION
+	      
+	      if($VERSION.contains(SNAPSHOT)){
+	      print "in snopshot"
+	      }
+	      else{
+	      print "in release"
+	      }
 	      sh ''' echo $VERSION'''
         //sh 'cd -'
         //sh 'mkdir deployment_files'
@@ -44,8 +51,8 @@ stages{
                    sh '''
              az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
 	     az account set -s $AZURE_SUBSCRIPTION_ID
-	     cd $PWD/$APPLICAION_DIR
-	     mvn azure-functions:deploy
+	     //cd $PWD/$APPLICAION_DIR
+	     //mvn azure-functions:deploy
 	     
             
                       '''
