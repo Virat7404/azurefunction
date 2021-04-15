@@ -51,13 +51,13 @@ stages{
                    sh '''
              az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
 	     az account set -s $AZURE_SUBSCRIPTION_ID
-	     //cd $PWD/$APPLICAION_DIR
-	     //mvn azure-functions:deploy
+	
 	     
             
                       '''
                         }
-	     
+	          //cd $PWD/$APPLICAION_DIR
+	     //mvn azure-functions:deploy
            //sh 'cd $PWD/target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev && zip -r ../../../archive.zip ./* && cd -'
           // sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
          // sh 'cd $PWD/target/azure-functions/func-001-fxs-daw-atlas-raw-transfer-dev && func azure functionapp publish functooldeployraw --publish-local-settings -i'
