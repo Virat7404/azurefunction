@@ -31,7 +31,7 @@ stages{
 	      else{
 	      print "in release"
 	      }
-	      sh ''' echo $VERSION'''
+	      sh ''' echo VERSION'''
         //sh 'cd -'
         //sh 'mkdir deployment_files'
         //sh 'cp -r $PWD/$APPLICAION_DIR/target/azure-functions/odd-or-even-function-sample/* deployment_files'
