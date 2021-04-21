@@ -28,7 +28,7 @@ node {
        // sh " az functionapp config appsettings set --name $FUNC_NAME --resource-group $RESOURCE_GROUP --settings 'secEventHubName=evh-sec-dev' "
        
       // sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && mvn azure-functions:deploy'
-      sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && func azure functionapp publish odd-or-even-function-sample --publish-local-settings -i'
+      sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && func azure functionapp publish odd-or-even-function-sample'
          sh 'az logout'
         }
         //azureFunctionAppPublish appName:'plugindeploy', azureCredentialsId: 'mscred',filePath: '**/*.json,**/*.jar,bin/*,HttpTrigger-Java/*,local.settings.json',resourceGroup: 'Jen_rgp',sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
